@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+}
+
+header, .desc {
+  font-family: 'Audiowide', cursive;
+}
+
+header {
+  font-size: 40px;
+  margin: 10px 0;
+}
+
+.desc {
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+.main form, #results {
+  font-family: 'Open Sans', sans-serif;
+}
+
+form input {
+  margin: 8px 0;
+}
+
+form label {
+  font-size: 18px;
+}
+
+input[type="radio"] {
+  margin-right: 2px;
+}
+
+.dir-left, .dir-right {
+  display: inline;
+}
+.dir-left {
+  margin-right: 5px;
+}
+
+.dir-right {
+  margin-left: 5px
+}
+
+#submit-btn {
+  border: 0;
+  font-size: 20px;
+  background-color: red;
+  padding: 8px;
+}

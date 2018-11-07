@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Caesar Cipher</title>
+    <link href="/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h1>Caesar Cipher</h1>
+    </header>
+    <div class="main">
+      <p class="desc">Here you can use the Caesar Cipher to transform any text you want!</p>
+      <p class="desc">Just enter your text, how many times you want to shift, and the direction to shift into.</p>
+      <div class="transform">
+        <form method="POST" action="/results">
+          <label for="text-input">Your Text</label><br>
+          <input type="text" name="str" required><br>
+          <label for="shift-input">Shift Count<label for="text-input"><br>
+          <input type="text" name="shift" pattern="^[0-9]+(?!.)" title="Must be any positive number." required><br>
+          <label for="direction-input">Direction</label><br>
+          <div class="dir-left">
+            <input type="radio" name="direction" value="left" required>
+            <label for="left-input">Left</label>
+          </div>
+          <div class="dir-right">
+            <input type="radio" name="direction" value="right" required>
+            <label for="right-input">Right</label><br>
+          </div>
+          <input id="submit-btn" type="submit" value="Transform!">
+        </form>
+        <p id="results"><%= @results %></p>
+      </div>
+    </div>
+  </body>
+</html>
