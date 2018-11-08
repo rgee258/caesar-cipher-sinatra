@@ -1,3 +1,32 @@
+*:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  position: relative;
+}
+
+.body-wrapper {
+  min-height: 96vh; /* Originally 100, changed to 96 for when the page does not expand beyond the viewport */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 20px; /* Changed to represent the additional padding of the footer */
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/* 
+  Everything above is a trick used to maintain the footer when the page is not expanded beyond the viewport
+  with a scroll bar, and accomodates it when it does.
+  Check it out here for reference: https://medium.com/@zerox/keep-that-damn-footer-at-the-bottom-c7a921cb9551
+*/
+
 * {
   margin: 0;
   padding: 0;
@@ -5,19 +34,21 @@
 
 body {
   text-align: center;
+  background-color: black;
 }
 
-header, .desc {
+header, .desc, footer {
   font-family: 'Audiowide', cursive;
+  color: white;
 }
 
 header {
-  font-size: 40px;
+  font-size: 175%;
   margin: 10px 0;
 }
 
 .desc {
-  font-size: 20px;
+  font-size: 125%;
   margin: 5px 0;
 }
 
@@ -25,12 +56,27 @@ header {
   font-family: 'Open Sans', sans-serif;
 }
 
+.main-form {
+  margin: 20px 0;
+}
+
 form input {
   margin: 8px 0;
 }
 
 form label {
-  font-size: 18px;
+  font-size: 110%;
+  color: white;
+}
+
+.input {
+  width: 15%;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+label[for="direction-input"] {
+  font-size: 95%;
 }
 
 input[type="radio"] {
@@ -39,18 +85,66 @@ input[type="radio"] {
 
 .dir-left, .dir-right {
   display: inline;
+  font-size: 80%;
 }
 .dir-left {
-  margin-right: 5px;
+  margin-right: 20px;
 }
 
 .dir-right {
-  margin-left: 5px
+  margin-left: 20px;
 }
 
 #submit-btn {
   border: 0;
-  font-size: 20px;
-  background-color: red;
-  padding: 8px;
+  border-radius: 3px;
+  border-style: double;
+  border-color: white;
+  border-width: 3px;
+  margin-top: 1rem;
+  padding: 0.3rem;
+  font-size: 105%;
+  font-family: 'Audiowide', cursive;
+  background-color: black;
+  color: white;
+}
+
+#submit-btn:hover {
+  cursor: pointer;
+  padding: 0.3rem;
+  border-style: double;
+  border-color: lime;
+  border-width: 3px;
+  color: lime;
+  background-image: linear-gradient(to bottom right, black, rgb(0, 255, 0, 0.22), black, rgb(0, 255, 0, 0.22), black);
+}
+
+#results {
+  margin: 0 22.5%;
+  margin-bottom: 20px;
+  padding: 0.5rem;
+  font-size: 125%;
+  border-radius: 3px;
+  border-style: double;
+  border-color: white;
+  word-wrap: break-word;
+  background-color: black;
+  color: white;
+}
+
+#results:empty {
+  display: none;
+}
+
+footer {
+  font-size: 50%;
+}
+
+footer a {
+  text-decoration: none;
+  color: #3366ff;
+}
+
+footer a:hover {
+  color: orange;
 }
